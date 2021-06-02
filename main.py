@@ -71,8 +71,8 @@ def main():
     if user_input.lower() == 'y' or user_input.lower() == 'д':
         show_animation = True
 
-    print('Результаты данного моделирования работы радара будут хранится в папке ' + path)
-    print('Для остановки программы нажмите Esc...')
+    print('Результаты данного моделирования работы радара будут хранится в папке ' + path + ' в каталоге проекта')
+    print('Для остановки программы нажмите Esc в демонстрационном окне или сочетание клавиш Ctrl+C в терминале...')
 
     radar = Fmcw(*(radar_data), show_animation, ar_path, vr_path)
     vehs = []
