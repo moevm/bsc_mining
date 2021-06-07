@@ -28,8 +28,11 @@ def main():
             radar_data = [line.rstrip() for line in radar_data][0].split(' ')
             is_correct_data = True
             for d in radar_data:
-                if d.isdigit() == False:
+                try:
+                    float_d = float(d)
+                except ValueError:
                     is_correct_data = False
+                    pass    
             if len(radar_data) != 7 or not is_correct_data:
                 print("Входной файл radar_input.txt содержит ошибку.")
                 print("В файле radar_input.txt должно содержаться через пробел свойства радара x, y, v, max_v, yaw, a, omega - его координаты, начальная и максимальная скорость (м/с), его угол направления (в градусах), ускорение скорости и угла")
@@ -47,10 +50,14 @@ def main():
             objects_data = [line.rstrip() for line in objects_data]
             for line in range(len(objects_data)):
                 objects_data[line] = objects_data[line].split(' ')
+                print(objects_data[line])
                 is_correct_data = True
                 for d in objects_data[line]:
-                    if d.isdigit() == False:
+                    try:
+                        float_d = float(d)
+                    except ValueError:
                         is_correct_data = False
+                        pass                        
                 if len(objects_data[line]) != 9 or not is_correct_data:
                     print("Входной файл object_input.txt содержит ошибку в " + str(line + 1) + " строке")
                     print("В файле object_input.txt должно содержаться в каждой строке через пробел свойства соответсвующих обьектов x, y, v, max_v, yaw, a, omega, w, L, - координаты, начальная и максимальная скорость (м/с), угол направления (в градусах), ускорение скорости и угла, ширину и длину объекта")

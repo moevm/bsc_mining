@@ -172,6 +172,6 @@ class Fmcw:
             plt.xticks(range(ranges.size)[::20], ranges[::20], rotation=90)
             plt.yticks(range(velocities.size)[::10], velocities[::10])
             plt.xlim([0, 200])
-            plt.xlabel("расстояние $r [m]")
-            plt.ylabel("скорость v$ [m/s]");
+            plt.xlabel("расстояние $r$ [m]")
+            plt.ylabel("скорость $v$ [m/s]");
             plt.title("Карта скорости-расстояния объектов")
